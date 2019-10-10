@@ -8,10 +8,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
 
-@Entity
+@Document
 @ApiModel(description = "All details about the Movie")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,7 +20,6 @@ import javax.persistence.*;
 @Setter
 public class Movie {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonProperty(value = "id")
     @ApiModelProperty(value = "Movie Id")
     private int id;
@@ -29,12 +29,10 @@ public class Movie {
     private String title;
 
     @JsonProperty(value = "vote_average")
-    @Column(name = "vote_average")
     @ApiModelProperty(value = "Movie average voted rating")
     private float voteAverage;
 
     @JsonProperty(value = "release_date")
-    @Column(name = "release_date")
     @ApiModelProperty(value = "Movie release date")
     private String releaseDate;
 

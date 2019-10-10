@@ -7,7 +7,6 @@ import com.stackroute.movieservices.exceptions.MovieException;
 import com.stackroute.movieservices.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -80,6 +79,6 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public List<Movie> findByTitle(String title){
-        return movieRepository.findByTitle(title);
+        return movieRepository.findMovieByTitle(title);
     }
 }

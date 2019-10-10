@@ -31,7 +31,7 @@ public class PreFillCommandLineRunner implements CommandLineRunner {
 
     @Value("${overview}")
     private String overview;
-    
+
     @Override
     public void run(String... args) throws Exception {
         System.out.println("-> Pre-Fill using CommandLineRunner");
